@@ -1,34 +1,34 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {
+  Link
+} from "react-router-dom";
+import img from "./images/newsdaily-high-resolution-logo-white-transparent.ico";
+
 
 export class NavBar extends Component {
 
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="/">News App</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/">Features</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/">Pricing</a>
-        </li>
-      </ul>
-      <span className="navbar-text">
-        Navbar text with an inline element
-      </span>
-    </div>
-  </div>
-</nav>
+        <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark"  data-bs-theme="dark">
+          <div className="container-fluid">
+            <Link className="navbar-brand" to="/"><img className='logo' src={img} alt="logo" /></Link>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                    <Link className="nav-link active" aria-current="page" to="/">Home </Link>
+                    <Link className="nav-link" to="/business">Business </Link>
+                    <Link className="nav-link" to="/entertainment">Entertainment </Link>
+                    <Link className="nav-link" to="/health">Health </Link>
+                    <Link className="nav-link" to="/science">Science </Link>
+                    <Link className="nav-link" to="/sports">Sports </Link>
+                    <Link className="nav-link" to="/technology">Technology </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
       </div>
     )
   }
